@@ -1,0 +1,225 @@
+<nav :class="{ 'onScroll': !topOfPage}">
+    <div class="logo">
+      <a to="/"
+        ><img src="@/assets/logo.png" alt="Logo Image" /> 
+      </a>
+    </div>
+    <div
+      class="hamburger"
+      v-bind:class="{ toggle: isToggle }"
+      @click="hamburgerClick()"
+    >
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    <ul class="nav-links" v-bind:class="{ open: isOpen }">
+      
+      <li v-bind:class="{ fade: isFade }">
+        <a to="/prophetic">About</a>
+      </li>
+      <li v-bind:class="{ fade: isFade }">
+        <a to="/prophetic">Team</a>
+      </li>
+      <li v-bind:class="{ fade: isFade }">
+        <a to="/Radio"><a href="https://gitbook.com">Whitepaper</a></a>
+      </li>
+      <li v-bind:class="{ fade: isFade }">
+        <div class="center-vertical-connect">
+          <button  class="connect-button">
+            TO APP
+          </button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+* {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+body {
+  overflow-x: hidden;
+}
+nav {
+    position: fixed;
+    height: 70px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all .2s ease-in-out;
+    width: 100vw;
+    z-index: 100000;
+    &.onScroll {
+      box-shadow: 0 0 10px #aaa;
+      background-color: #fff;
+      ul li {
+        color: #10b761;
+      }
+    }
+    
+    toApp {
+      right: 20px;
+    }
+  }
+.end {
+  right: 2em;
+}
+.connect-button{
+  position: absolute;
+  flex: none;
+  right: -200px;
+}
+/*Styling logo*/
+.logo {
+  display: inline-block;
+  text-decoration: none;
+  padding: 1vh 1vw;
+  text-align: center;
+}
+
+.logo img {
+  height: 3rem;
+  width: 3rem;
+}
+
+/*Styling Links*/
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 100vw;
+  align-items: center;
+  text-transform: uppercase;
+}
+.nav-links li a {
+  text-decoration: none;
+  margin: 0 2vw;
+}
+.nav-links li a:hover {
+  color: #551a8b;
+}
+.nav-links li {
+  position: relative;
+}
+.nav-links li a::before {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0%;
+  background-color: #551a8b;
+  position: absolute;
+  transition: all ease-in-out 250ms;
+  margin: 0 0 0 10%;
+}
+.nav-links li a:hover::before {
+  margin-top: 20px;
+  width: 50%;
+}
+
+ul {
+      margin-left: 3em;
+      width: 25%;
+      display: flex;
+
+      li {
+        cursor: pointer;
+        font-weight: 600;
+        list-style-type: none;
+        color: black;
+      }
+    }
+
+/*Styling Hamburger Icon*/
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background: #551a8b;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+.hamburger {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .center-vertical-connect {
+    right: 1vw;
+  }
+}
+/*Stying for small screens*/
+@media screen and (max-width: 800px) {
+  nav {
+    position: fixed;
+    z-index: 3;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+  }
+  .nav-links {
+    position: fixed;
+    background: #f2f5f7;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(50px at 90% -20%);
+    -webkit-clip-path: circle(50px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+  .nav-links.open {
+    clip-path: circle(10000px at 90% -10%);
+    -webkit-clip-path: circle(1200px at 90% -10%);
+    pointer-events: all;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  .nav-links li:nth-child(4) {
+    transition: all 0.5s ease 0.7s;
+  }
+  .nav-links li:nth-child(5) {
+    transition: all 0.5s ease 0.8s;
+  }
+  .nav-links li:nth-child(6) {
+    transition: all 0.5s ease 0.9s;
+    margin: 0;
+  }
+  .nav-links li:nth-child(7) {
+    transition: all 0.5s ease 1s;
+    margin: 0;
+  }
+  li.fade {
+    opacity: 1;
+  }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  transition: all 0.7s ease;
+  width: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
