@@ -3,18 +3,18 @@
       <div class="banner">
       <div class="text-box">
         
-          <h1 class="uppercase">The next step in crypto backed loans</h1>
-          <h2>Community backed lending platform powered by the Cardano Blockchain.</h2>
+          <h1 class="uppercase">SET &amp; FORGET <br> CRYPTO LOANS</h1>
+          <h2>The first community backed lending protocol powered by the Cardano Blockchain </h2>
           <a class="to-app" href="https://app.yamfore.com">LAUNCH</a>
       </div>
       <img src="" alt="">
-      <div class="analytics-area">
+      <!-- <div class="analytics-area">
           <div class="analytics-box">
               <div class="data-div"><div class="my-5">20%</div><div><b>Collateral Requirement</b></div></div> 
               <div class="data-div"><div class="my-5">10M+</div><div><b>Yam Marketcap</b></div></div> 
               <div class="data-div"><div class="my-5">1000</div><b>Active loans</b><div></div></div>
           </div>
-      </div>
+      </div> -->
   </div>
   </div>
 </template>
@@ -48,7 +48,7 @@ export default class Banner extends Vue {
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet&display=swap');
 .banner {
     width: 100%;
-    height: 100vh;
+    height: 70vh;
     background-color: white;
     z-index: -3;
     
@@ -67,7 +67,7 @@ export default class Banner extends Vue {
         height:fit-content;
         
         margin-left: 7em;
-        margin-top: 20vh;
+        margin-top: 30vh;
         display: flex;
         flex-direction: column;
     }
@@ -89,7 +89,7 @@ export default class Banner extends Vue {
   left: 1em;
   text-align: center;
   font-size: 1.25rem;
-  
+  font-weight: 900;
 }
 /* styling banner img */
 .banner-img{
@@ -101,13 +101,15 @@ export default class Banner extends Vue {
 }
 h1 {
     font-size: 56px;
-    font-family: 'Hahmlet', serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: left;
+    font-weight: 900;
 }
 h2 {
     font-size: 24px;
-    font-family: 'Hahmlet', serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: left;
+    font-weight: 300;
 }
 .data-div{
   display: flex;

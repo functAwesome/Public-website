@@ -100,13 +100,13 @@ nav{
   width: fit-content;
 }
 .brand-logo {
-  height: 4rem;
-  width: 4rem;
+  height: 2rem;
+  width: 2rem;
 }
 .brand-text{
   font-weight: 800;
   margin-left: 0.5em;
-  font-size: 18pt;
+  font-size: 16pt;
 }
 /* Styling links */
 .flex-links{
@@ -133,6 +133,7 @@ nav{
   rgb(20, 20, 50); */;
   margin-right: 5em;
   font-size: 1.25rem;
+  font-weight: 900;
 }
 /* Styling Community drop down */
 .community{
