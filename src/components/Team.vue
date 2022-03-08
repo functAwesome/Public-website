@@ -1,5 +1,5 @@
 <template>
-  <div class="section my-margin">
+  <div class="section my-margin" id="team">
     <div class="wrapper">
         <h2 class="section-heading ">Team</h2>
         <div class='row'>

@@ -7,7 +7,7 @@
     <div class="flex-links" v-bind:class="{ open: isOpen }">
       <a class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>TOKENOMICS</div></a>
       <a class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>ROADMAP</div></a>
-      <a class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>TEAM</div></a>
+      <a class="links hover-blue" v-bind:class="{ fade: isFade }" href="#team"><div>TEAM</div></a>
       <a class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>LITEPAPER</div></a>
       <a @click="expand()" class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>COMMUNITY</div></a><div class="community">hello</div>
       <a class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>FAQ</div></a>
