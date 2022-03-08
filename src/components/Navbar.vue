@@ -5,11 +5,14 @@
       <div class="brand-text">YAMFORE</div>
     </div>
     <div class="flex-links" v-bind:class="{ open: isOpen }">
-      <a class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>ABOUT</div></a>
+      <a class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>TOKENOMICS</div></a>
+      <a class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>ROADMAP</div></a>
       <a class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>TEAM</div></a>
-      <a class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>WHITEPAPER</div></a>
+      <a class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>LITEPAPER</div></a>
+      <a @click="expand()" class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>COMMUNITY</div></a><div class="community">hello</div>
+      <a class="links hover-blue" v-bind:class="{ fade: isFade }" href=""><div>FAQ</div></a>
     </div>
-    <a class="to-app" href="https://app.yamfore.com">TO APP</a>
+    <a class="to-app" href="https://app.yamfore.com">LAUNCH</a>
     <div
       class="hamburger"
       v-bind:class="{ toggle: isToggle }"
@@ -22,7 +25,7 @@
     <div class="mobile-navbar">
       <div class="mobile-link"><a class="hover-blue" href="">ABOUT</a></div>
       <div class="mobile-link"><a class="hover-blue" href="">TEAM</a></div>
-      <div class="mobile-link"><a class="hover-blue" href="">WHITEPAPER</a></div>
+      <div class="mobile-link"><a class="hover-blue" href="">LITEPAPER</a></div>
     </div>
   </nav>
 </template>
@@ -35,6 +38,7 @@ export default class Navbar extends Vue {
   isOpen = false;
   isFade = false;
   isToggle = false;
+  isExpand = false;
   
   handleScroll(){
     console.log('scroll')
@@ -43,6 +47,10 @@ export default class Navbar extends Vue {
       } else {
         if(!this.topOfPage) this.topOfPage = true
       }
+    }
+    expand(){
+      this.isExpand = true
+      console.log(this.isExpand)
     }
     hamburgerClick() {
       if (this.isToggle === false) {
@@ -89,38 +97,51 @@ nav{
   display: flex;
   align-items: center;
   padding: 0em 1em;
+  width: fit-content;
 }
 .brand-logo {
   height: 4rem;
   width: 4rem;
 }
 .brand-text{
-  margin-left: 1em;
-  font-size: 22pt;
+  font-weight: 800;
+  margin-left: 0.5em;
+  font-size: 18pt;
 }
 /* Styling links */
 .flex-links{
-  padding-right: 30em;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
 .links{
+  width: fit-content;
   list-style: none;
   text-decoration: none;
   margin: 0 1em;
-  font-size: 15pt;
+  font-size: 12.5pt;
   color: black;
 }
 .to-app{
+  border-radius: 5px;
+  padding: 1em 4em;
   text-decoration: none;
   color: white;
-  background-color: /* rgb(18, 18, 170) */ #162d5d
+  background-color: /* rgb(18, 18, 170) */ #1649b6
   /* rgb(23, 110, 222)
   rgb(20, 20, 50); */;
-  border-radius: 5px;
-  padding: 0.7em;
-  margin-right: 10em;
-  
+  margin-right: 5em;
+  font-size: 1.25rem;
+}
+/* Styling Community drop down */
+.community{
+  position: absolute;
+  bottom: -120px;
+  left: 60%;
+  height: 120px;
+  width: 40px;
+  z-index: 1000;
 }
 /*Styling Hamburger Icon*/
 .hamburger div {

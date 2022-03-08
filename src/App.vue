@@ -1,10 +1,17 @@
 <template>
   <div id="app">
     <Navbar /> 
-    
       <Banner />
-      <About/>
+      <hr>
+      <Benefits />
+      <hr>
+      <Tokenomics />
+      <hr>
       <Roadmap />
+      <hr>
+      <Team />
+      <hr>
+      <Faq />
       <Footer />
   </div>
 </template>
@@ -13,16 +20,22 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Navbar from './components/Navbar.vue';
 import Banner from './components/Banner.vue'
-import About from './components/About.vue'
 import Roadmap from './components/Roadmap.vue'
+import Tokenomics from './components/Tokenomics.vue'
 import Footer from './components/Footer.vue'
+import Benefits from './components/Benefits.vue'
+import Team from './components/Team.vue'
+import Faq from './components/Faq.vue'
 
 @Component({
   components: {
     Navbar,
     Banner,
-    About,
+    Tokenomics,
+    Benefits,
     Roadmap,
+    Team,
+    Faq,
     Footer
   },
 })
@@ -32,10 +45,10 @@ export default class App extends Vue {}
 <style lang="scss">
 *{
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -46,16 +59,30 @@ export default class App extends Vue {}
   width: 100vw !important;
   height: auto;
   overflow-x: hidden;
-  margin-bottom: 1em;
 }
 .section-heading{
-  font-size: 20pt;
+  font-size: 25pt;
   text-decoration: underline;
+  text-decoration-color: black;
+  text-decoration-thickness: 5px;
   text-align: center;
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
 .hover-blue:hover{
   color: rgb(20, 20, 50);
+}
+.text-white{
+    color: white;
+}
+hr{
+  background-color: rgb(223, 223, 223);
+  height: 2px;
+  border: none;
+  margin: 0 auto;
+  width: 40vw;
+}
+.my-margin{
+  margin: 7em 0;
 }
 </style>

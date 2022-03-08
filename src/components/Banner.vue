@@ -1,16 +1,18 @@
 <template>
-  <div class="section">
+  <div class="section mb-7">
       <div class="banner">
       <div class="text-box">
-          <h1 class="uppercase">Massive text of something</h1>
-          <h2>Smaller Text</h2>
+        
+          <h1 class="uppercase">The next step in crypto backed loans</h1>
+          <h2>Community backed lending platform powered by the Cardano Blockchain.</h2>
+          <a class="to-app" href="https://app.yamfore.com">LAUNCH</a>
       </div>
       <img src="" alt="">
       <div class="analytics-area">
           <div class="analytics-box">
-              <div class="data-div">Data1</div> <div class="vl" />
-              <div class="data-div">Data2</div> <div class="vl" />
-              <div class="data-div">Data3</div>
+              <div class="data-div"><div class="my-5">20%</div><div><b>Collateral Requirement</b></div></div> 
+              <div class="data-div"><div class="my-5">10M+</div><div><b>Yam Marketcap</b></div></div> 
+              <div class="data-div"><div class="my-5">1000</div><b>Active loans</b><div></div></div>
           </div>
       </div>
   </div>
@@ -20,10 +22,12 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
+
 @Component
-export default class Navbar extends Vue {
+export default class Banner extends Vue {
   topOfPage = true;
   name = 'hello';
+  
   handleScroll(){
       if(window.pageYOffset>0){
         if(this.topOfPage) this.topOfPage = false
@@ -31,14 +35,10 @@ export default class Navbar extends Vue {
         if(!this.topOfPage) this.topOfPage = true
       }
     }
-  test = (): void => {
-    this.name = 'Hello Wrold!';
-    console.log('this is test and called');
-  };
   beforeMount = (): void => {
-    this.test();
     window.addEventListener('scroll', this.handleScroll)
   }
+  
 }
   
 </script>
@@ -47,52 +47,107 @@ export default class Navbar extends Vue {
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet&display=swap');
 .banner {
-    width: 90%;
-    height: 90vh;
+    width: 100%;
+    height: 100vh;
     background-color: white;
     z-index: -3;
+    
+    
     overflow-x: hidden;
     margin: 0;
 }
+.mb-7{
+  margin-bottom: 7em;
+}
 .text-box{
     position: absolute;
+    padding: 1em;
+    padding-bottom: 7em;
         width: 40vw;
-        height:auto;
+        height:fit-content;
+        
         margin-left: 7em;
-        margin-top: 32vh;
+        margin-top: 20vh;
+        display: flex;
+        flex-direction: column;
     }
     .uppercase{
         text-transform: uppercase;
+        font-size: 56px;
     }
+/* To app styling */
+.to-app{
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  background-color: /* rgb(18, 18, 170) */ #1649b6
+  /* rgb(23, 110, 222)
+  rgb(20, 20, 50); */;
+  border-radius: 5px;
+  padding: 1em 4em;
+  bottom: 0;
+  left: 1em;
+  text-align: center;
+  font-size: 1.25rem;
+  
+}
+/* styling banner img */
+.banner-img{
+  position: absolute;
+  bottom: 100px;
+  right: 6vw;
+  width: 30vw;
+  z-index: 1;
+}
 h1 {
-    font-size: 40pt;
+    font-size: 56px;
     font-family: 'Hahmlet', serif;
-    text-align: center;
+    text-align: left;
 }
 h2 {
-    font-size: 20pt;
+    font-size: 24px;
     font-family: 'Hahmlet', serif;
-    text-align: center;
+    text-align: left;
 }
 .data-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 8px 20px 7px rgba(0,0,0,0.27);
+    -webkit-box-shadow: 0px 8px 20px 7px rgba(0,0,0,0.27);
+    -moz-box-shadow: 0px 8px 20px 7px rgba(0,0,0,0.27);
+    margin: 5em 0;
+  padding: 1.9em;
     z-index: 20;
+  width: 200px;
 }
+.my-5{
+  margin: 5px 0;
+  font-size: 40pt;
+}
+
 .analytics-area{
     position: absolute;
-    width: 90vw;
-    height: 150px;
-    bottom: 0px;
+    width: 100vw;
+    height: 200px;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
 }
 .analytics-box{
     position: static;
     width: 60vw;
-    height: 100px;
+    height: fit-content;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
     z-index: 3;
+    background-color: white;
+    border-radius: 20px;
+    
 }
 
 .vl {

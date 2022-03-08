@@ -4,15 +4,7 @@
         ><img src="@/assets/logo.png" alt="Logo Image" /> 
       </a>
     </div>
-    <div
-      class="hamburger"
-      v-bind:class="{ toggle: isToggle }"
-      @click="hamburgerClick()"
-    >
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
+    
     <ul class="nav-links" v-bind:class="{ open: isOpen }">
       
       <li v-bind:class="{ fade: isFade }">
@@ -45,11 +37,9 @@ body {
   overflow-x: hidden;
 }
 nav {
-    position: fixed;
-    height: 70px;
+    
     background-color: transparent;
     display: flex;
-    align-items: center;
     justify-content: flex-start;
     transition: all .2s ease-in-out;
     width: 100vw;
@@ -133,28 +123,8 @@ ul {
       }
     }
 
-/*Styling Hamburger Icon*/
-.hamburger div {
-  width: 30px;
-  height: 3px;
-  background: #551a8b;
-  margin: 5px;
-  transition: all 0.3s ease;
-}
-.hamburger {
-  display: none;
-}
-@media screen and (max-width: 900px) {
-  .center-vertical-connect {
-    right: 1vw;
-  }
-}
 /*Stying for small screens*/
 @media screen and (max-width: 800px) {
-  nav {
-    position: fixed;
-    z-index: 3;
-  }
 
   .hamburger {
     display: block;
